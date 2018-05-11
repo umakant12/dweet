@@ -1,15 +1,15 @@
 #include <ESP8266WiFi.h>
 const int AnalogIn  = A0;
 
-const char* ssid     = "IoT_AP1";
-const char* password = "6mM_@U$eLQ/>4h?N";
+const char* ssid     = "pass";        //your ssid   
+const char* password = "password";    //your password
 
 const char* host = "www.dweet.io";
-const char* thing  = "myiot";
+const char* thing  = "umakant";       //your thing name 
 const char* thing_content = "A0";
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
   delay(10);
 
   // We start by connecting to a WiFi network
@@ -31,9 +31,7 @@ void setup() {
   Serial.println("IP address: ");
   Serial.println(WiFi.localIP());
 }
-
-int value = 0;
-
+int value;
 void loop() {
   delay(1000);
   value = analogRead(AnalogIn);
